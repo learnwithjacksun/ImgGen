@@ -1,24 +1,61 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fefefe;
+  --foreground: #fefefe;
+  --primary: #010101;
+  --primary-inverse: #fefefe;
+  --secondary: #fafafa;
+  --main: #444;
+  --sub: #999;
+  --line: #eaeaea;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #000000;
+  --foreground: #0a0a0a;
+  --primary: #fafafa;
+  --primary-inverse: #444;
+  --secondary: #171717;
+  --main: #fefefe;
+  --sub: #686868;
+  --line: #2a2a2a;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-sora: var(--font-sora);
+  --color-line: var(--line);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-inverse: var(--primary-inverse);
+  --color-secondary: var(--secondary);
+  --color-main: var(--main);
+  --color-sub: var(--sub);
+}
+
+* {
+  outline: none;
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+.main {
+  @apply min-[1440px]:max-w-[1144px] max-w-[90%] mx-auto;
+}
+
+.center {
+  @apply flex items-center justify-center;
+}
+
+button {
+  @apply cursor-pointer font-medium flex items-center gap-2 disabled:opacity-80 disabled:cursor-not-allowed;
+}
+
+.input{
+  @apply border border-line px-2 h-11 w-full text-sm rounded-md focus:ring-[2px] outline-none focus:ring-offset-2 focus:ring-primary/80 focus:ring-offset-background shadow-none
 }
