@@ -1,7 +1,7 @@
 "use client";
 
-import { LoginFormData } from "@/app/login/Page";
-import { SignupFormData } from "@/app/signup/Page";
+import { LoginFormData } from "@/app/login/page";
+import { SignupFormData } from "@/app/signup/page";
 import { Models, ID } from "appwrite";
 import { useState, useEffect, useCallback } from "react";
 import { AuthContext } from "./AuthContext";
